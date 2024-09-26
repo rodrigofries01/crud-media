@@ -1,0 +1,40 @@
+<form class="container">
+  <div class="input-group">
+    <input class="form-control" type="text" placeholder="Alunos" id="aluno" />
+  </div>
+  <div class="input-group">
+    <input class="nota form-control" type="number" placeholder="1ª Nota" />
+    <input class="nota form-control" type="number" placeholder="2ª Nota" />
+  </div>
+  <div class="input-group">
+    <input type="button" class="btn btn-success" value="Cadastrar" />
+    <input type="button" class="btn btn-primary" value="Alterar" />
+    <input type="button" class="btn btn-danger" value="Remover" />
+    <input type="button" class="btn btn-warning" value="Cancelar" />
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Aluno</th>
+      <th scope="col">1ª Nota</th>
+      <th scope="col">2ª Nota</th>
+      <th scope="col">Média</th>
+      <th scope="col">Selecionar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr for="let i of indice">
+      <td>Aurora</td>
+      <td>10,0</td>
+      <td>10,0</td>
+      <td>10,0</td>
+      <td>
+        <button class="btn btn-primary">
+          Selecionar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

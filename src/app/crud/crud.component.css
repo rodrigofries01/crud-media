@@ -1,0 +1,42 @@
+.container {
+  max-width: 40%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  max-width: 40%;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group input {
+  flex: 1;
+  margin: 5px;
+}
+
+.input-group input:first-child {
+  margin-right: 5px;
+}
+
+.input-group input[type="text"] {
+  width: 100%;
+}
+
+table.table {
+  text-align: center;
+  margin: 50px auto;
+  width: 80%;
+}
+
+table.table tr th {
+  font-weight: bold;
+}
+
+table.table tr td {
+  align-content: center;
+}
