@@ -2,15 +2,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Aluno } from '../models/Aluno';
 import { HttpClient } from '@angular/common/http';
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AlunosService {
-  url: string = 'http://localhost:3000/alunos';
+  url = 'http://localhost:3000/alunos';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   selecionar(): Observable<Aluno[]> {
     return this.http.get<Aluno[]>(this.url);

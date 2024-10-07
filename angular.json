@@ -4,7 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "crud-media": {
-      
       "projectType": "application",
       "schematics": {},
       "root": "",
