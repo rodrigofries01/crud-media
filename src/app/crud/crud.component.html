@@ -29,11 +29,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr for="let i of indice">
+    <tr *ngFor="let a of alunos">
       <td>Aurora</td>
-      <td>10,0</td>
-      <td>10,0</td>
-      <td>10,0</td>
+      <td>{{a.aluno}}</td>
+      <td>{{a.nota1}}</td>
+      <td>{{a.nota2}}</td>
       <td>
         <button class="btn btn-primary">
           Selecionar
