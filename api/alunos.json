@@ -1,0 +1,18 @@
+{
+  "alunos": [
+    {
+      "id": "1",
+      "nome": "Aurora",
+      "nota1": 10,
+      "nota2": 10,
+      "media": 10
+    },
+    {
+      "id": "c21e",
+      "nome": "",
+      "nota1": null,
+      "nota2": null,
+      "media": 0
+    }
+  ]
+}

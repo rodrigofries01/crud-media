@@ -1,4 +1,3 @@
-import type { Aluno } from './../models/Aluno';
 import { Pipe, type PipeTransform } from '@angular/core';
 @Pipe({
   name: 'mediaAluno',

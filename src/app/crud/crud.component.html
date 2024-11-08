@@ -7,17 +7,15 @@
     <input class="nota form-control" type="number" placeholder="2ª Nota" />
   </div>
   <div class="input-group">
-    <input type="button" class="btn btn-success" value="Cadastrar" />
-    <input type="button" class="btn btn-primary" value="Alterar" />
+    <input type="button" class="btn btn-success" value="Cadastrar" *ngIf="btnOperacao" (click)="cadastrar()" [disabled]="
+      aluno.get('nome').hasError('required') ||
+      aluno.get('nota1').hasError('required') ||
+      aluno.get('nota1').hasError('min')" /> <!--//TODO não esta salvando os valores-->
+    <input type=" button" class="btn btn-primary" value="Alterar" />
     <input type="button" class="btn btn-danger" value="Remover" />
     <input type="button" class="btn btn-warning" value="Cancelar" />
   </div>
 </form>
-
-<!-- Pesquisa -->
-<input class="input-group" for="termoPesquisado" type="text" placeholder="Pesquisar..." class="form-control pesquisa"
-  aria-describedby="termoPesquisado" autofocus />
-<!-- ^[(ngModel)]="termoPesquisado" -->
 
 <table class="table table-striped">
   <thead>
@@ -31,10 +29,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let a of alunos">
-      <td>Aurora</td>
       <td>{{a.nome}}</td>
       <td>{{a.nota1}}</td>
       <td>{{a.nota2}}</td>
+      <td>{{a.media}}</td>
       <td>
         <button class="btn btn-primary">Selecionar</button>
       </td>

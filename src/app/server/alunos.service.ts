@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AlunosService {
-  url = 'http://localhost:3000/alunos';
+  url: string = 'http://localhost:3000/alunos';
 
   constructor(private http: HttpClient) {}
 

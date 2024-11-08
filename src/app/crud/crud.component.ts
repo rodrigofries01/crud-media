@@ -19,6 +19,10 @@ import { AlunosService } from '../server/alunos.service';
   styleUrl: './crud.component.css',
 })
 export class CrudComponent {
+  alunos: Aluno[] = [];
+  caracteres: [MediaAlunoPipe];
+  btnOperacao = true;
+
   aluno = new FormGroup({
     nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
     nota1: new FormControl(null, [
@@ -34,11 +38,6 @@ export class CrudComponent {
   });
 
   constructor(private alunosService: AlunosService) {}
-  indice = -1;
-  alunos: Aluno[] = [];
-  termoPesquisado = '';
-  catacteres: [MediaAlunoPipe];
-  btnOperacao = true;
 
   // inicialização do componente
   ngOnInit() {
@@ -74,6 +73,7 @@ export class CrudComponent {
         nome: this.aluno.value.nome,
         nota1: this.aluno.value.nota1,
         nota2: this.aluno.value.nota2,
+        media: (this.aluno.value.nota1 + this.aluno.value.nota2) / 2,
       };
       this.alunosService.cadastrar(novoAluno).subscribe((retorno) => {
         this.alunos.push(retorno);
