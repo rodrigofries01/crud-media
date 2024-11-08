@@ -15,8 +15,9 @@
 </form>
 
 <!-- Pesquisa -->
-<!-- <input for="termoPesquisado" type="text" placeholder="Pesquisar..." class="form-control pesquisa"
-  [(ngModel)]="buscarAluno" aria-describedby="termoPesquisado" autofocus /> -->
+<input class="input-group" for="termoPesquisado" type="text" placeholder="Pesquisar..." class="form-control pesquisa"
+  aria-describedby="termoPesquisado" autofocus />
+<!-- ^[(ngModel)]="termoPesquisado" -->
 
 <table class="table table-striped">
   <thead>
@@ -35,9 +36,7 @@
       <td>{{a.nota1}}</td>
       <td>{{a.nota2}}</td>
       <td>
-        <button class="btn btn-primary">
-          Selecionar
-        </button>
+        <button class="btn btn-primary">Selecionar</button>
       </td>
     </tr>
   </tbody>

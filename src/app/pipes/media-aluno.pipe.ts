@@ -1,6 +1,5 @@
-import { Aluno } from './../models/Aluno';
-import { Pipe, PipeTransform } from '@angular/core';
-
+import type { Aluno } from './../models/Aluno';
+import { Pipe, type PipeTransform } from '@angular/core';
 @Pipe({
   name: 'mediaAluno',
   standalone: true,
