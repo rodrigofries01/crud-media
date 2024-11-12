@@ -1,17 +1,71 @@
-<form class="container">
-  <div class="input-group">
-    <input class="form-control" type="text" placeholder="Aluno" id="aluno" />
-  </div>
-  <div class="input-group">
-    <input class="nota form-control" type="number" placeholder="1ª Nota" />
-    <input class="nota form-control" type="number" placeholder="2ª Nota" />
-  </div>
-  <div class="input-group">
+<form [formGroup]="aluno">
+  <!-- NOME -->
+  <input class="form-control" type="text" placeholder="Aluno" formControlName="nome" name="nome" />
+  @if (aluno.get('nome').hasError('required') &&
+  aluno.get('nome').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    O campo nome é obrigatório!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>
+  }@else if (aluno.get('nome').hasError('minlength') &&
+  aluno.get('nome').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    O nome precisa ter pelo menos 3 caracteres
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>
+  }
+
+  <!-- NOTA 1 -->
+  <input class="nota form-control" type="number" placeholder="1ª Nota" formControlName="nota1" />
+  @if (aluno.get('nota1').hasError('required') &&
+  aluno.get('nota1').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    Insira uma nota!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>
+  }@else if (aluno.get('nota1').hasError('required') &&
+  aluno.get('nota1').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    Insira uma nota!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>}
+  @else if (aluno.get('nota1').hasError('max') &&
+  aluno.get('nota1').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    O valor não pode ser maior que 10!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>
+  }
+
+  <!-- NOTA 2 -->
+  <input class="nota form-control" type="number" placeholder="2ª Nota" id="nota2" formControlName="nota2" />
+  @if (aluno.get('nota2').hasError('required') &&
+  aluno.get('nota2').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    Insira uma nota!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>
+  }@else if (aluno.get('nota2').hasError('required') &&
+  aluno.get('nota2').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    Insira uma nota!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>}
+  @else if (aluno.get('nota2').hasError('max') &&
+  aluno.get('nota2').touched) {
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">
+    O valor não pode ser maior que 10!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>
+  }
+  <div class=" input-group">
     <input type="button" class="btn btn-success" value="Cadastrar" *ngIf="btnOperacao" (click)="cadastrar()" [disabled]="
       aluno.get('nome').hasError('required') ||
       aluno.get('nota1').hasError('required') ||
-      aluno.get('nota1').hasError('min')" /> <!--//TODO não esta salvando os valores-->
-    <input type=" button" class="btn btn-primary" value="Alterar" />
+      aluno.get('nota1').hasError('min') || 
+      aluno.get('nota2').hasError('required') ||
+      aluno.get('nota2').hasError('min')" />
+    <input type="button" class="btn btn-primary" value="Alterar" />
     <input type="button" class="btn btn-danger" value="Remover" />
     <input type="button" class="btn btn-warning" value="Cancelar" />
   </div>

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AlunosService {
   url: string = 'http://localhost:3000/alunos';
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   selecionar(): Observable<Aluno[]> {
     return this.http.get<Aluno[]>(this.url);

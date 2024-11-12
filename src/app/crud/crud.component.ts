@@ -32,12 +32,12 @@ export class CrudComponent {
     ]),
     nota2: new FormControl(null, [
       Validators.required,
-      Validators.min(0),
-      Validators.max(10),
+      Validators.min(0.0),
+      Validators.max(10.0),
     ]),
   });
 
-  constructor(private alunosService: AlunosService) {}
+  constructor(private readonly alunosService: AlunosService) {}
 
   // inicialização do componente
   ngOnInit() {
@@ -67,7 +67,7 @@ export class CrudComponent {
       return obj.nome === this.aluno.value.nome;
     });
     if (posicaoNomeExistente !== -1) {
-      alert('O produto ja existe');
+      alert('O Aluno ja existe');
     } else {
       const novoAluno: Aluno = {
         nome: this.aluno.value.nome,
@@ -81,4 +81,5 @@ export class CrudComponent {
       });
     }
   }
+  // TODO Iniciar metodo de Alterar
 }
